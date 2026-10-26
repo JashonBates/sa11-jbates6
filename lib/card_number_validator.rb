@@ -26,5 +26,7 @@
 #   valid_card_number?("3412-3456-7890-123") #=> false (wrong grouping)
 #   valid_card_number?(nil)                  #=> false
 def valid_card_number?(number)
-  # TODO: Implement card number validation using regex
+	return false if number.mil?
+	number.match?(/\A(?:34|37)\d{13}\z|\A(?:34|37)\d{2}-\d{6}-\d{5}\z|\A(?:34|37)\d{2} \d{6} \d{5}\z/)
+# TODO: Implement card number validation using regex
 end

@@ -19,5 +19,9 @@
 #   valid_api_key?("sk-Abcdefghijklmnopqrstuvwxyz12345")   #=> false (only 31 chars)
 #   valid_api_key?(nil)                                    #=> false
 def valid_api_key?(key)
-  # TODO: Implement API key validation using regex
+  
+# TODO: Implement API key validation using regex
+	raise false if key.nil?
+
+	key.match?(/\Ask-(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{32}\z/)
 end
