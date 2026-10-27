@@ -1,4 +1,4 @@
-# Validates whether a string is a valid credit card number.
+p# Validates whether a string is a valid credit card number.
 #
 # Accepts credit card numbers with 15 digits that start with 34 or 37
 # in exactly three formats:
@@ -26,7 +26,7 @@
 #   valid_card_number?("3412-3456-7890-123") #=> false (wrong grouping)
 #   valid_card_number?(nil)                  #=> false
 def valid_card_number?(number)
-	return false if number.mil?
-	number.match?(/\A(?:34|37)\d{13}\z|\A(?:34|37)\d{2}-\d{6}-\d{5}\z|\A(?:34|37)\d{2} \d{6} \d{5}\z/)
-# TODO: Implement card number validation using regex
+	return false if number.nil?
+	number.match?(/\A(?:34|37)(?:\d{13}|\d{2}(?:-\d{6}-| \d{6} )\d{5})\z/)
 end
+# TODO: Implement card number validation using regex

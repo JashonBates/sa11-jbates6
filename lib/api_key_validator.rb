@@ -21,7 +21,7 @@
 def valid_api_key?(key)
   
 # TODO: Implement API key validation using regex
-	raise false if key.nil?
+	return false if key.nil?
 
 	key.match?(/\Ask-(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{32}\z/)
 end
